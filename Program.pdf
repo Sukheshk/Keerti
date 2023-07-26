@@ -1,0 +1,280 @@
+---------------Fibonacci Program ------------
+
+package com.java.prepare;
+
+import java.util.Scanner;
+
+public class Fibonacci {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner s=new Scanner(System.in);
+		System.out.println("enter the value of n");
+		int n=s.nextInt();
+		
+		int n1=0;
+		int n2=1;
+		int sum=0;
+		System.out.println(n1);
+		System.out.println(n2);
+		
+		
+		while(n>=3 && n!=0)
+		{
+			sum=n1+n2;
+			System.out.println(sum);
+			n1=n2;
+			n2=sum;
+			n--;
+		}
+		
+				
+
+	}
+
+}
+
+
+
+----------------------------------Sorating of Arrays-----------------------
+
+
+public class SortingOfArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a[]={16,2,6,9,7,11,4,100,23};
+		int temp=0;
+		
+		for(int i=0; i<a.length; i++)
+		{
+			for(int j=0; j<a.length-1; j++)
+			{
+				if(a[i]<a[j])
+				{
+					temp=a[i];
+					a[i]=a[j];
+					a[j]=temp;
+					
+				}
+			}
+		}
+		for(int i=0; i<a.length; i++)
+		{
+			System.out.print(a[i]+",");
+		}
+
+	}
+
+}
+
+
+
+---------------------Searching Missing Number in Array ---------------------------
+
+import java.util.Scanner;
+
+public class SearchingInArray {
+
+	public static void main(String[] args) {
+		
+		Scanner s=new Scanner(System.in);
+		System.out.println("enter number to be searched");
+		int n=s.nextInt();
+		int temp=0;
+		
+		int a[]= {10,12,3,1,7,20,8};
+		for(int i=0; i<a.length; i++)
+		{
+			if(a[i]==n)
+			{
+				System.out.println("number found at"+" "+i);
+				 temp=1;
+			}
+		}
+		if(temp<1)
+		{
+			System.out.println("number not found");
+		}
+			
+		
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+
+-----------------------------Finding Missing Number in Array----------------
+
+
+public class FindingMissingNumber {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		int a[]= {9,6,4,2,3,5,7,0,1};
+		int c=0;
+		
+		int size=a.length;
+		
+		
+		int sum=size*(size+1)/2;
+		//System.out.println(sum);
+		for(int i=0;i<a.length; i++)
+		{
+			c=c+a[i];
+		}
+		//System.out.println(c);
+		
+		int number=sum-c;
+		System.out.println("the missing number is"+" "+number);
+	}
+
+}
+
+----------------------------------Prime Numbers----------------------------
+
+import java.util.Scanner;
+
+public class PrimeNumber {
+
+	public static void main(String[] args) {
+		
+		int i =0;
+	       int num =0;
+	       //Empty String
+	       String  primeNumbers = "";
+
+	       for (i =100; i <= 1000; i++)         
+	       { 		  	  
+	          int counter=0; 	  
+	          for(num =i; num>=1; num--)
+		  {
+	             if(i%num==0)
+		     {
+	 		counter = counter + 1;
+		     }
+		  }
+		  if (counter ==2)
+		  {
+		     primeNumbers = primeNumbers + i + " ";
+		  }	
+	       }	
+	       System.out.println("Prime numbers from 1 to 100 are :");
+	       System.out.println(primeNumbers);
+	   }
+	}
+
+
+
+-----------Addition of Arrays--------------------
+
+
+public class AdditionOfArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int a[]= {1,2,3};
+		int b[]= {3,2,1};
+		
+		int sum[]=new int[3];
+		
+		for(int i=0;i<=2;i++)
+		{
+			sum[i]=a[i]+b[i];
+		}
+		for(int i=0;i<=2;i++)
+		{
+			System.out.print(sum[i]);
+		}
+	}
+
+}
+
+
+
+---------------Reverse Stirnig -------------------------------
+
+package com.java.ReverseString;
+
+public class ReverseStringOodles {
+	
+
+	public static void main(String[] args) 
+	{
+		String s="oodles is awesome";
+		
+		String[] word=s.split(" ");
+		String reversestring="";
+		for (String w:word)
+		{
+			String reverseword="";
+			for (int i=w.length()-1;i>=0;i--)
+			{
+				reverseword=reverseword+w.charAt(i);
+				
+			}
+			reversestring=reversestring+reverseword+" ";
+		}
+		System.out.println(reversestring);
+	}
+
+}
+
+
+---Star Pattern------
+
+
+public class StarPattern {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		for(int i=1; i<=4; i++)
+		{
+			for(int j=4; j>=i; j--)
+			{
+				System.out.print(" ");
+			}
+			for(int k=1; k<=i; k++)
+			{
+				System.out.print("*");
+			}
+			for(int l=2; l<=i; l++)
+			{
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+
+}
+
+--------Counting the number of occurence of charecters --------------
+
+
+public class NumberOfOccuranceOfCharecters {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String str="oodles technologies";
+		int count=0;
+		for(char ch:str.toCharArray())
+		{
+			if(ch==' ')
+			{
+				count++;
+			}
+		}
+		System.out.println(count);
+
+	}
+
+}
+
+
+ 
