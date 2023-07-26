@@ -1,0 +1,209 @@
+lab01:create azure Account?
+lab02:Activate Azure Account?
+lab03:Create a resource Group?
+lab04:create a multiple resource group?
+lab05:create a resource gropu and tag it?
+lab06:At a time of creation of resource group implement the tag also
+lab07:create Azure VNet
+lab08:Create a window VM and perform the below task
+	1.stop
+	2.start
+	3.restart
+	4.Customize the dashboard
+	5.export the CSV file
+	6.Delete
+lab10:Create multiple Window VN and perform below task
+	1.stop
+	2.start
+	3.restart
+	4.Customize the dashboard
+	5.export the CSV file
+	6.tag
+	7.Delete
+lab11:create multiple Linux VM
+lab12:create window vm and access through RDP?
+lab13:create window vn and try to access RDP file?
+lab14:install the putty in system?
+lab15:Create a linux VM and try to access with Putty?
+lab16:Create a window VM and Install any software?
+lab17:Resetting Password for linux/window VM?
+lab18:create a IOT HUB?
+lab19:Create a sql data base?
+lab20:Create a storage account?
+lab21:Create a NSG in azure?
+lab22:lab22:create a Resource group through powershell?
+lab23:create aVM through powershell?
+lab24:verify the resource group in poershell?
+lab25:verify the vm creation on powershell platform
+Lab26: - Creatye Virtual Network Through PowerShell Platfrom?
+Lab27: - verify VirtualNetwork in Powershell Platform?
+lab28:-Create a NSG using PowerShell in Azure
+Lab29: - Create a Disk in azure?
+Lab30: - Create a Window VM and attach a disk on it?
+Lab31: - Create and Attach disk created newly in VM overview?
+lab32:-create a azure function and delete it?
+lab33:-create a azure app in azure
+Lab34:-Create NSG and create inbound and outbound rule?
+Lab35:Create azure firewall?
+
+Lab37: - Try to schedule Auto shutdown for VM?
+Lab38: - Create azure active directory
+Lab39: - Add the user in AD (Azure active Directory)
+Lab40: - Add the single guest user in AD
+Lab41: - Add the Bulk User in AD
+Lab42: - Add the Bulk Guest user in AD
+Lab43: - Delete the guest user from AD
+Lab44: - Delete the user from AD.
+Lab45: - Create a user group in AD
+Lab46: -Add the user in User Group
+Lab47: -Retrive the deleted user in AD.
+Lab48: -Profile addition in AD.
+Lab49: -Updating the profile.
+Lab50: -Adding the multi-factor authentication in user.
+Lab51:-create azure key vault
+lab 52: create resource group through azure CLI.
+az group create --name RGTest01 --location EastUS
+
+lab 53: List the Resource group in tabular form.
+az group list --output table
+
+
+Lab 54: create vm through azure CLI.
+az vm create \
+ --name VMWinArun01 \
+ --resource-group RGTest01 \
+ --image win2019datacenter  \
+ --location AustraliaEast \
+ --admin-username azureuser \
+ --admin-password Password@123
+
+Lab 55: Create a VNet Through azure CLI.
+az network vnet create \
+  --name vnetest01 \
+  --resource-group RGTest01 \
+  --subnet-name default
+
+LAB 56: List Vnet through azure CLI.
+az network vnet list --output table
+
+Lab 57: Create disk through azure CLI.
+az disk create -g RGTest01 -n diskarun01 --size-gb 1024 -l EastUS --sku Premium_LRS --max-shares 2
+
+lab 58: List the Disk through azure CLI.
+az group list --output table
+
+lab 59 :Delete the disk through azure CLI.
+az disk delete --name DiskTest01 --resource-group RGTest01
+
+lab 60:update the disk thruough azure CLI.
+az disk update --name DiskTest01 --resource-group RGTest01
+
+lab 61:create  disk throught powershell
+(1st run this)$diskConfig = New-AzureRmDiskConfig -Location "EastUS" -CreateOption Empty -DiskSizeGB 128
+
+(2nd)New-AzureRmDisk -ResourceGroupName "RGTest01" -DiskName "DataDiskTest01" -Disk $diskConfig
+
+$diskConfig = New-AzureRmDiskConfig -Location "EastUS" -CreateOption Empty -DiskSizeGB 128
+New-AzureRmDisk -ResourceGroupName "RGtest01" -DiskName "DataDiskTest02" -Disk $diskConfig
+
+lab 63: Create a Azure Data Factory(ADF).
+lab 64: Create a storage account and container in azure and upload the file in it.
+lab 65:create continer app in azure.
+lab 67 : regenerate the key vault key in azure.
+lab 68: create the app services(code).
+lab 69: Create azure devops account.
+lab 70: create an organizatiom inside the azure devops.
+lab 71: create a project inside the organization.
+lab 72: delete the project from organization.
+lab 73: delete the organization from azure devops.
+Lab74: - Remove the services from Azure DevOps.
+Lab75: - Add the below items into Azure Board.
+	1) EPIC
+	2) BUG
+	3) Feature
+	4) Issue
+	5) Task
+	6) UserStory
+Lab75: - Create a Team in project
+Lab76: - Add Team Member in project team.
+Lab77: - Create Backlog in Boards.
+Lab78: - Create a sprint and query.
+Lab 79- create data lake storage Gen1 using CLI?
+Ans - az dls account create --account datastoragegen101 --resource-group RGTest01 --location EastUS
+
+Lab 80 - Create data Lake storage Gen1 using Powershell?
+Ans - New-AzDataLakeStoreAccount -Name "datastoragegen22" -Location "East US 2" -ResourceGroupName "RGtest01"
+
+
+
+
+
+
+
+
+
+
+
+New-AzNetworkSecurityGroup -Name "nsg1" -ResourceGroupName "RGTest001"  -Location  "westus"
+
+
+
+
+
+
+
+commands
+
+New-AzResourceGroup -Name RGTest099 -Location "South Central US"
+Get-AzResourceGroup
+
+New-AzVm `
+ -ResourceGroupName "RGTest09" `
+ -Name "VMMy01" `
+ -Location "East Asia" `
+ -VirtualNetworkName "VNetMy01"
+
+
+New-AzureRmVirtualNetwork `
+-ResourceGroupName "RGTest01" `
+-Name "Vnet1" `
+-AddressPrefix "10.0.0.0/16" `
+-Location "EastUS"
+
+
+
+
+az vm create \
+ --name VMWinArun01 \
+ --resource-group RGtest2 \
+--public-ip-sku Standard \
+ --image win2019datacenter  \
+ --location AustraliaEast \
+ --admin-username azureuser \
+ --admin-password Password@123
+
+az vm delete \
+ --name VMWinArun01 \
+ --resource-group RGtest2 \
+--public-ip-sku Standard \
+ --image win2019datacenter  \
+ --location AustraliaEast \
+ 
+Remove-AzVirtualNetwork -resourcegroupname "RGTest01" -name "VNet01"
+
+
+AzVm delete `
+ -ResourceGroupName "RGTest09" `
+ -Name "VMMy01" `
+ -Location "East Asia" `
+ -VirtualNetworkName "VNetMy01"
+
+
+az storage account delete \
+ --name storagekeerti2 \
+ --resource-group RGTest01 \
+ --location eastus \
+ --sku Standard_RAGRS \
+ --kind Storagev2
+
+
